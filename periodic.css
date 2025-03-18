@@ -3,48 +3,23 @@ html {
     font-family: 'Poppins', Arial, sans-serif;
 }
 
-/* Global Reset */
 * {
     box-sizing: border-box;
-    margin: 10px; /* Fixed incorrect margin syntax */
-    padding: 10px; /* Fixed incorrect padding syntax */
+    margin: 10 10;
+    padding: 10 10;
 }
-
-/* Classification Table Styling */
 .classification {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: center;
-    margin: 20px auto; /* Centers the table */
-    overflow-x: auto;
-    display: block; /* Allows scrolling */
+    padding-left: 170px;
 }
-
-/* Scrollability on Small Screens */
-.des {
-    width: 100%;
-    overflow-x: auto;
-}
-
-/* Table Header Colors */
 #non {
     color: #e4965e; 
 }
-#al-ka {
+#al-ka{
     color: #f66;
 }
-#alke {
+#alke{
     color: #314ce7;
 }
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .classification {
-        font-size: clamp(12px, 2vw, 16px); /* Ensures text remains readable */
-        white-space: nowrap; /* Prevents text from breaking */
-    }
-}
-
 #metalo{
     color: #cc9;
 }
@@ -240,35 +215,61 @@ html {
 .halogen {
     background-color: #820909;
 }
-/* Responsive Grid Adjustments */
-@media only screen and (max-width: 1024px) {
-    .p-Table {
-        grid-template-columns: repeat(12, minmax(3em, 1fr));
-    }
-}
 
 @media only screen and (max-width: 768px) {
     .p-Table {
-        grid-template-columns: repeat(9, minmax(2.5em, 1fr));
+        grid-template-columns: repeat(12, [group] minmax(3em, 1fr));
+        grid-template-rows: repeat(9, [period] 1fr);
         width: 100%;
     }
     .ele {
-        padding: 8px;
+        padding: 5px;
+    }
+    .ele-name {
+        font-size: 1em;
     }
 }
 
 @media only screen and (max-width: 480px) {
     .p-Table {
-        grid-template-columns: repeat(6, minmax(2em, 1fr));
+        grid-template-columns: repeat(6, [group] minmax(1.5em, 1fr));
+        grid-template-rows: repeat(12, [period] 1fr);
         width: 100%;
     }
     .ele {
-        padding: 5px;
-        font-size: 0.8em;
+        padding: 2px;
     }
+    .ele-name {
+        font-size: 0.8em;
+    }
 }
 
-/* Tooltip for Hover Interaction */
+@media only screen and (max-width: 768px) {
+    .p-Table {
+        grid-template-columns: repeat(12, [group] minmax(2em, 1fr));
+        grid-template-rows: repeat(9, [period] 1fr);
+        width: 100%;
+    }
+    .ele {
+        padding: 2px;
+      position: relative; /* Important for tooltip positioning */
+    border: thin solid black;
+    text-align: center;
+    opacity: 0.85;
+    cursor: pointer;
+}
+
+.ele:hover,
+.ele:focus {
+    opacity: 1;
+    font-weight: bold;
+}
+    }
+    .ele-name {
+        font-size: 0.8em;
+      
+ }
+  /* Tooltip Base Style */
 .tooltip {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.85);
@@ -282,10 +283,8 @@ html {
     transition: opacity 0.2s ease-in-out;
     max-width: 200px;
     text-align: left;
+  
+
 }
 
-.ele:hover .tooltip {
-    display: block;
-    opacity: 1;
 }
-
