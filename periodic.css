@@ -3,23 +3,48 @@ html {
     font-family: 'Poppins', Arial, sans-serif;
 }
 
+/* Global Reset */
 * {
     box-sizing: border-box;
-    margin: 10 10;
-    padding: 10 10;
+    margin: 10px; /* Fixed incorrect margin syntax */
+    padding: 10px; /* Fixed incorrect padding syntax */
 }
+
+/* Classification Table Styling */
 .classification {
-    padding-left: 170px;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    margin: 20px auto; /* Centers the table */
+    overflow-x: auto;
+    display: block; /* Allows scrolling */
 }
+
+/* Scrollability on Small Screens */
+.des {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* Table Header Colors */
 #non {
     color: #e4965e; 
 }
-#al-ka{
+#al-ka {
     color: #f66;
 }
-#alke{
+#alke {
     color: #314ce7;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .classification {
+        font-size: clamp(12px, 2vw, 16px); /* Ensures text remains readable */
+        white-space: nowrap; /* Prevents text from breaking */
+    }
+}
+
 #metalo{
     color: #cc9;
 }
