@@ -15,7 +15,7 @@
         <u>Interactive Periodic Table</u>
     </h1>
 
-    <div class="des">
+    <span class="des">
         <table class="classification">
             <tr>
                 <th id="non">Non-metal,</th>
@@ -30,7 +30,7 @@
                 <th id="acti">Actinides</th>
             </tr>
         </table>
-    </div>
+    </span>
 
     <!-- Linking JavaScript file (Moved to the end of <body> for better performance) -->
     <script src="periodic.js" defer></script>
@@ -639,8 +639,13 @@
             <div id="element-info"></div>
         </div>
     </div>
-     
+      <button onclick="redirectToLandingPage()">HOME</button>
 
+<script>
+    function redirectToLandingPage() {
+        window.open("https://codepen.io/Saptarshi-Sarkar-the-decoder/pen/MYWbawa");
+    }
+</script>
 
     
     </div>
